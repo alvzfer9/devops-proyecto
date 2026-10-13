@@ -14,4 +14,4 @@ def dividir(a, b):
     if b == 0:
         raise ZeroDivisionError("El divisor no puede ser cero.")
     return a / b
-#Función de potencia (TODO)
+# Función de potencia (TODO)
