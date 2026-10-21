@@ -34,3 +34,4 @@ def test_funcion_nueva():
     from calculadora import funcion_nueva_con_bug
     # Si CI hace bien su trabajo, esto nunca llega a producción
     resultado = funcion_nueva_con_bug()
+    assert resultado is not None
