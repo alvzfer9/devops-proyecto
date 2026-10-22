@@ -12,5 +12,5 @@ def multiplicar(a, b):
 
 def dividir(a, b):
     if b == 0:
-        raise ZeroDivisionError("El divisor no puede ser cero. Proporciona un n�mero distinto de 0.")
+        raise ZeroDivisionError("El divisor no puede ser cero. Proporciona distinto de 0.")
     return a / b
