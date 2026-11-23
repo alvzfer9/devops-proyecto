@@ -15,7 +15,7 @@ resource "azurerm_virtual_network" "main" {
 }
 
 resource "azurerm_storage_account" "main" {
-  name                     = "st${var.environment}devopsferalvarez7"
+  name                     = "st${var.environment}devops${substr(md5(var.environment), 0, 5)}"
   resource_group_name      = azurerm_resource_group.main.name
   location                 = azurerm_resource_group.main.location
   account_tier             = "Standard"
@@ -34,6 +34,9 @@ resource "azurerm_kubernetes_cluster" "aks" {
     vm_size    = var.vm_size
   }
 
+  oidc_issuer_enabled       = true
+  workload_identity_enabled = true
+
   identity {
     type = "SystemAssigned"
   }
@@ -43,4 +46,3 @@ resource "azurerm_kubernetes_cluster" "aks" {
     project     = "devops-academia"
   }
 }
- 
